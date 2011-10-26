@@ -1,0 +1,16 @@
+# dwm - dynamic window manager
+
+dwm is a dynamic window manager for X. It manages windows in tiled, monocle and
+floating layouts. All of the layouts can be applied dynamically, optimising the
+environment for the application in use and the task performed.
+
+http://dwm.suckless.org/
+
+### Configuration
+
+Configuration in dwm is done by modifying its source code and recompiling, all
+the common configurations are done via _config.h_ file.  
+Also, there are lots of patches to add extra functionalities to dwm. Those that
+are applied here are listed below.
+
+#### Applied patches
