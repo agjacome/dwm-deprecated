@@ -14,3 +14,7 @@ Also, there are lots of patches to add extra functionalities to dwm. Those that
 are applied here are listed below.
 
 #### Applied patches
+
+* Attachaside: attachaside makes the new client get attached and focused in the
+stacking area instead of always becoming the new master. It’s basically an
+attachabove mod.

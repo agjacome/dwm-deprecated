@@ -10,8 +10,8 @@ static const char selbgcolor[]      = "#222222";
 static const char selfgcolor[]      = "#CC3333";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
-static const Bool showbar           = False;     /* False means no bar */
-static const Bool topbar            = True;     /* False means bottom bar */
+static const Bool showbar           = True;     /* False means no bar */
+static const Bool topbar            = False;     /* False means bottom bar */
 
 /* tagging */
 static const char *tags[] = { "net", "med", "cmd", "dev", "var" };
@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *menucmd[] = {
 	"dmenu_run", "-i", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor,
-	"-sb", selbgcolor, "-sf", selfgcolor, "-p", "dmenu", NULL
+	"-sb", selbgcolor, "-sf", selfgcolor, "-p", "dmenu", "-b", NULL
 };
 
 static const char *termcmd[] = { "urxvtc", NULL };
