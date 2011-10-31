@@ -25,3 +25,8 @@ config.h.
 the windows in a grid. Instead of using a regular grid, which might leave empty
 cells when there are not enough windows to fill the grid, it adjusts the number
 of windows in the first few columns to avoid empty cells.
+* Movestack: This plugin allows you to move clients around in the stack and swap
+them with the master. It emulates the behavior off mod+shift+j and mod+shift+k
+in Xmonad. movestack(+1) will swap the client with the current focus with the
+next client. movestack(-1) will swap the client with the current focus with the
+previous client.
