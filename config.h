@@ -76,6 +76,11 @@ static const char *editcmd[] = { "urxvtc", "-e", "vim", NULL };
 static const char *shotcmd[] = { "scrot", "-mq10", NULL };
 static const char *wshtcmd[] = { "scrot", "-sq10", NULL };
 static const char *lockcmd[] = { "slock", NULL };
+static const char *musicmd[] = { "urxvtc", "-e", "ncmpcpp", NULL };
+static const char *mtogcmd[] = { "ncmpcpp", "toggle", NULL };
+static const char *mprecmd[] = { "ncmpcpp", "prev", NULL };
+static const char *mnexcmd[] = { "ncmpcpp", "next", NULL };
+static const char *voltcmd[] = { "amixer", "-q", "sset", "Master", "toggle", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -89,6 +94,11 @@ static Key keys[] = {
 	{ MODKEY,						XK_d,			spawn,			{.v = filecmd } },
 	{ 0,							0xff61,			spawn,			{.v = shotcmd } },
 	{ MODKEY,						0xff61,			spawn,			{.v = wshtcmd } },
+	{ 0,							0x1008ff81,		spawn,			{.v = musicmd } },
+	{ 0,							0x1008ff16,		spawn,			{.v = mprecmd } },
+	{ 0,							0x1008ff14,		spawn,			{.v = mtogcmd } },
+	{ 0,							0x1008ff17,		spawn,			{.v = mnexcmd } },
+	{ 0,							0x1008ff12,		spawn,			{.v = voltcmd } },
 	{ MODKEY,                       XK_m,      		togglebar,      {0} },
 
 	{ MODKEY,                       XK_j,      		focusstack,     {.i = +1 } },
