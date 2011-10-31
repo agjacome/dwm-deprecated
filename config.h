@@ -39,9 +39,11 @@ static const Rule rules[] = {
 static const float mfact      = 0.50; /* factor of master area size [0.05..0.95] */
 static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 
+#include "bstack.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
+	{ "TTT",      bstack },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
@@ -96,6 +98,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_1,      		setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_2,      		setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_3,      		setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,						XK_4,			setlayout,		{.v = &layouts[3]} },
 /*	{ MODKEY,                       XK_p,			setlayout,      {0} },	*/
 	{ MODKEY|ShiftMask,             XK_f,			togglefloating, {0} },
 	{ MODKEY,                       XK_p,      		view,           {.ui = ~0 } },

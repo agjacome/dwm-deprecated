@@ -18,3 +18,6 @@ are applied here are listed below.
 * Attachaside: attachaside makes the new client get attached and focused in the
 stacking area instead of always becoming the new master. It’s basically an
 attachabove mod.
+* BottomStack: bstack and bstackhoriz are two bottom stack layouts for dwm.
+Here, i do not use bstackhoriz, so it is removed in the repo and not included in
+config.h.
