@@ -12,6 +12,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = False;     /* False means bottom bar */
+static const Bool viewontag			= True;		/* Switch view on tag switch */
 
 /* tagging */
 static const char *tags[] = { "net", "med", "cmd", "dev", "var" };

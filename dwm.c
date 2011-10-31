@@ -1630,6 +1630,8 @@ tag(const Arg *arg) {
 	if(selmon->sel && arg->ui & TAGMASK) {
 		selmon->sel->tags = arg->ui & TAGMASK;
 		arrange(selmon);
+		if(viewontag)
+			view(arg);
 	}
 }
 
