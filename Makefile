@@ -4,7 +4,7 @@
 include config.mk
 
 SRC = dwm.c
-OBJ = bin/${SRC:.c=.o}
+OBJ = ${SRC:.c=.o}
 
 all: options dwm
 
@@ -20,22 +20,19 @@ options:
 
 ${OBJ}: config.h config.mk
 
-config.h:
-	@echo creating $@ from config.def.h
-	@cp config.def.h $@
-
 dwm: ${OBJ}
 	@echo CC -o $@
 	@${CC} -o bin/$@ ${OBJ} ${LDFLAGS}
+	@mv ${OBJ} bin/${OBJ}
 
 clean:
 	@echo cleaning
-	@rm -f bin/dwm ${OBJ} bin/dwm-${VERSION}.tar.gz
+	@rm -f bin/dwm bin/${OBJ} bin/dwm-${VERSION}.tar.gz
 
 dist: clean
 	@echo creating dist tarball
 	@mkdir -p bin/dwm-${VERSION}
-	@cp -R docs/LICENSE Makefile docs/README config.def.h config.mk \
+	@cp -R docs/LICENSE Makefile docs/README config.h config.mk \
 		docs/dwm.1 ${SRC} bin/dwm-${VERSION}
 	@tar -cf bin/dwm-${VERSION}.tar bin/dwm-${VERSION}
 	@gzip bin/dwm-${VERSION}.tar
