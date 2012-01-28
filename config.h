@@ -22,7 +22,6 @@ static const Rule rules[] = {
     { "feh",                    NULL,           NULL,           0,          True,           0 },
     { "Firefox",                NULL,           NULL,           1,          False,          0 },
     { "Firefox",                NULL,           "Descargas",    1,          True,           0 },
-    { "Firefox",                NULL,           "Preferencias", 1,          True,           0 },
     { "MPlayer",                NULL,           NULL,           2,          True,           0 },
     { "Pcmanfm",                NULL,           NULL,           4,          False,          0 },
     { "Eclipse",                NULL,           NULL,           8,          False,          0 },
