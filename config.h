@@ -10,7 +10,7 @@ static const char selbgcolor[]      = "#222222";
 static const char selfgcolor[]      = "#CC3333";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 0;        /* snap pixel */
-static const Bool showbar           = True;     /* False means no bar */
+static const Bool showbar           = False;    /* False means no bar */
 static const Bool topbar            = False;    /* False means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 
@@ -28,6 +28,7 @@ static const Rule rules[] = {
     { NULL,                     NULL,           "OpenOffice",   16,         True,           0 },
     { NULL,                     NULL,           "LibreOffice",  16,         False,          0 },
     { "Evince",                 NULL,           NULL,           16,         False,          0 },
+    { "MuPDF",                  NULL,           NULL,           16,         False,          0 },
     { "Gimp",                   NULL,           NULL,           16,         True,           0 },
 };
 
