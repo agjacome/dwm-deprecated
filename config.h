@@ -26,6 +26,7 @@ static const Rule rules[] = {
     { "MPlayer",                NULL,           NULL,           2,          True,           0 },
     { "Pcmanfm",                NULL,           NULL,           4,          False,          0 },
     { "Eclipse",                NULL,           NULL,           8,          False,          0 },
+    { "PacketTracer5",          NULL,           NULL,           8,          False,          0 },
     { NULL,                     NULL,           "OpenOffice",   16,         True,           0 },
     { NULL,                     NULL,           "LibreOffice",  16,         False,          0 },
     { "Evince",                 NULL,           NULL,           16,         False,          0 },
