@@ -20,6 +20,7 @@ static const char *tags[] = { "net", "med", "cmd", "dev", "var" };
 static const Rule rules[] = {
     /* class                    instance        title           tagmask     isfloating      monitor */
     { "feh",                    NULL,           NULL,           0,          True,           0 },
+    { "Gxmessage",              NULL,           NULL,           0,          True,           0 },
     { "Firefox",                NULL,           NULL,           1,          False,          0 },
     { "Firefox",                NULL,           "Descargas",    1,          True,           0 },
     { "MPlayer",                NULL,           NULL,           2,          True,           0 },
