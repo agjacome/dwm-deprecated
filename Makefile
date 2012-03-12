@@ -3,7 +3,7 @@
 
 include config.mk
 
-SRC = src/dwm.c
+SRC = dwm.c
 OBJ = ${SRC:.c=.o}
 
 all: options dwm
@@ -16,34 +16,39 @@ options:
 
 .c.o:
 	@echo CC $<
-	@${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
+	@${CC} -c ${CFLAGS} $<
 
-${OBJ}: src/config.h config.mk
+${OBJ}: config.h config.mk
+
+config.h:
+	@echo creating $@ from config.def.h
+	@cp config.def.h $@
+
 dwm: ${OBJ}
 	@echo CC -o $@
-	@${CC} -o bin/$@ ${OBJ} ${LDFLAGS}
+	@${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 clean:
 	@echo cleaning
-	@rm -f bin/dwm ${OBJ} bin/dwm-${VERSION}.tar.gz
+	@rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
 
 dist: clean
 	@echo creating dist tarball
-	@mkdir -p bin/dwm-${VERSION}
-	@cp -R docs/LICENSE Makefile docs/README config.h config.mk \
-		docs/dwm.1 ${SRC} bin/dwm-${VERSION}
-	@tar -cf bin/dwm-${VERSION}.tar bin/dwm-${VERSION}
-	@gzip bin/dwm-${VERSION}.tar
-	@rm -rf bin/dwm-${VERSION}
+	@mkdir -p dwm-${VERSION}
+	@cp -R LICENSE Makefile README config.def.h config.mk \
+		dwm.1 ${SRC} dwm-${VERSION}
+	@tar -cf dwm-${VERSION}.tar dwm-${VERSION}
+	@gzip dwm-${VERSION}.tar
+	@rm -rf dwm-${VERSION}
 
 install: all
 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
 	@mkdir -p ${DESTDIR}${PREFIX}/bin
-	@cp -f bin/dwm ${DESTDIR}${PREFIX}/bin
+	@cp -f dwm ${DESTDIR}${PREFIX}/bin
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
-	@sed "s/VERSION/${VERSION}/g" < docs/dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
+	@sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
 
 uninstall:
