@@ -3,7 +3,7 @@
 
 include config.mk
 
-SRC = dwm.c
+SRC = src/dwm.c
 OBJ = ${SRC:.c=.o}
 
 all: options dwm
@@ -16,18 +16,16 @@ options:
 
 .c.o:
 	@echo CC $<
-	@${CC} -c ${CFLAGS} $<
+	@${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
 
-${OBJ}: config.h config.mk
-
+${OBJ}: src/config.h config.mk
 dwm: ${OBJ}
 	@echo CC -o $@
 	@${CC} -o bin/$@ ${OBJ} ${LDFLAGS}
-	@mv ${OBJ} bin/${OBJ}
 
 clean:
 	@echo cleaning
-	@rm -f bin/dwm bin/${OBJ} bin/dwm-${VERSION}.tar.gz
+	@rm -f bin/dwm ${OBJ} bin/dwm-${VERSION}.tar.gz
 
 dist: clean
 	@echo creating dist tarball

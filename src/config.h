@@ -18,20 +18,20 @@ static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *tags[] = { "net", "med", "cmd", "dev", "var" };
 
 static const Rule rules[] = {
-    /* class                    instance        title           tagmask     isfloating      monitor */
-    { "feh",                    NULL,           NULL,           0,          True,           0 },
-    { "Gxmessage",              NULL,           NULL,           0,          True,           0 },
-    { "Firefox",                NULL,           NULL,           1,          False,          0 },
-    { "Firefox",                NULL,           "Descargas",    1,          True,           0 },
-    { "MPlayer",                NULL,           NULL,           2,          True,           0 },
-    { "Pcmanfm",                NULL,           NULL,           4,          False,          0 },
-    { "Eclipse",                NULL,           NULL,           8,          False,          0 },
-    { "PacketTracer5",          NULL,           NULL,           8,          False,          0 },
-    { NULL,                     NULL,           "OpenOffice",   16,         True,           0 },
-    { NULL,                     NULL,           "LibreOffice",  16,         False,          0 },
-    { "Evince",                 NULL,           NULL,           16,         False,          0 },
-    { "MuPDF",                  NULL,           NULL,           16,         False,          0 },
-    { "Gimp",                   NULL,           NULL,           16,         True,           0 },
+    /* class            instance    title           tagmask     isfloating  monitor */
+    { "feh",            NULL,       NULL,           0,          True,       0 },
+    { "Gxmessage",      NULL,       NULL,           0,          True,       0 },
+    { "Firefox",        NULL,       NULL,           1,          False,      0 },
+    { "Firefox",        NULL,       "Descargas",    1,          True,       0 },
+    { "MPlayer",        NULL,       NULL,           2,          True,       0 },
+    { "Pcmanfm",        NULL,       NULL,           4,          False,      0 },
+    { "Eclipse",        NULL,       NULL,           8,          False,      0 },
+    { "PacketTracer5",  NULL,       NULL,           8,          False,      0 },
+    { NULL,             NULL,       "OpenOffice",   16,         True,       0 },
+    { NULL,             NULL,       "LibreOffice",  16,         False,      0 },
+    { "Evince",         NULL,       NULL,           16,         False,      0 },
+    { "MuPDF",          NULL,       NULL,           16,         False,      0 },
+    { "Gimp",           NULL,       NULL,           16,         True,       0 },
 };
 
 /* layout(s) */
