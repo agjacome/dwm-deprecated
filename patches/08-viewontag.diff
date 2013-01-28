@@ -1,0 +1,12 @@
+diff -r 0d86faf4b05c dwm.c
+--- a/dwm.c	Sun Jul 25 09:58:25 2010 +0100
++++ b/dwm.c	Sun Jul 25 16:32:38 2010 +0200
+@@ -1613,6 +1613,8 @@
+ 	if(selmon->sel && arg->ui & TAGMASK) {
+ 		selmon->sel->tags = arg->ui & TAGMASK;
+ 		arrange(selmon);
++		if(viewontag)
++			view(arg);
+ 	}
+ }
+ 
