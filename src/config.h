@@ -31,13 +31,15 @@ static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *tags[ ] = { "\uE000", "\uE001", "\uE008", "\uE002", "\uE006", "\uE007" };
 
 static const Rule rules[] = {
-    /* class            instance    title           tagmask     isfloating  monitor */
+    /* class                        instance    title           tagmask     isfloating  monitor */
     { "feh",                        NULL,       NULL,           0,          True,       0 },
     { "Firefox",                    NULL,       NULL,           1,          False,      0 },
     { "MPlayer",                    NULL,       NULL,           4,          True,       0 },
     { "Spotify",                    NULL,       NULL,           4,          False,      0 },
     { "Pcmanfm",                    NULL,       NULL,           8,          False,      0 },
-    { "Eclipse",                    NULL,       NULL,           16,          False,      0 },
+    { "VirtualBox",                 NULL,       NULL,           8,          True,       0 },
+    { "Eclipse",                    NULL,       NULL,           16,         False,      0 },
+    { "Qtcreator",                  NULL,       NULL,           16,         False,      0 },
     { "libreoffice-calc",           NULL,       NULL,           32,         False,      0 },
     { "libreoffice-impress",        NULL,       NULL,           32,         False,      0 },
     { "libreoffice-startcenter",    NULL,       NULL,           32,         False,      0 },
