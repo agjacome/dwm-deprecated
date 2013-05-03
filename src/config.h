@@ -40,6 +40,7 @@ static const Rule rules[] = {
     { "VirtualBox",                 NULL,       NULL,           8,          True,       0 },
     { "Eclipse",                    NULL,       NULL,           16,         False,      0 },
     { "Qtcreator",                  NULL,       NULL,           16,         False,      0 },
+    { NULL,                         NULL,       "LibreOffice",  32,         False,      0 },
     { "libreoffice-calc",           NULL,       NULL,           32,         False,      0 },
     { "libreoffice-impress",        NULL,       NULL,           32,         False,      0 },
     { "libreoffice-startcenter",    NULL,       NULL,           32,         False,      0 },
@@ -77,7 +78,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char *[ ]) { "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[ ]      = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
+static const char *dmenucmd[ ]      = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[1][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
 static const char *termcmd[ ]       = { "urxvtc", NULL };
 static const char scratchpadname[ ] = "scratchpad";
 static const char *scratchpadcmd[ ] = { "urxvtc", "-name", scratchpadname, "-geometry", "100x25", NULL };
