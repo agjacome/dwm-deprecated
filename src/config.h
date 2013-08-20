@@ -35,6 +35,8 @@ static const Rule rules[] = {
     { "feh",                        NULL,       NULL,           0,          True,       0 },
     { "Firefox",                    NULL,       NULL,           1,          False,      0 },
     { "MPlayer",                    NULL,       NULL,           4,          True,       0 },
+    { "mplayer2",                   NULL,       NULL,           4,          True,       0 },
+    { "mpv",                        NULL,       NULL,           4,          True,       0 },
     { "Spotify",                    NULL,       NULL,           4,          False,      0 },
     { "Pcmanfm",                    NULL,       NULL,           8,          False,      0 },
     { "VirtualBox",                 NULL,       NULL,           8,          True,       0 },
