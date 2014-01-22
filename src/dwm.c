@@ -1792,7 +1792,7 @@ textnw(const char *text, unsigned int len) {
 
 void
 tile(Monitor *m) {
-    unsigned int i, n, h, mw, my, ty, r;
+    unsigned int i, n, h, g = 0, mw, my, ty, r, rr;
     Client *c;
 
     for(n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
@@ -1800,7 +1800,7 @@ tile(Monitor *m) {
         return;
 
     if(n > m->nmaster)
-        mw = m->nmaster ? m->ww * m->mfact : 0;
+        mw = m->nmaster ? (m->ww - (g = gappx)) * m->mfact : 0;
     else
         mw = m->ww;
     for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++, r = 0) {
@@ -1819,18 +1819,20 @@ tile(Monitor *m) {
             r = 1;
         }
         if(i < m->nmaster) {
-            h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+            rr = MIN(n, m->nmaster) - i;
+            h = (m->wh - my - gappx * (rr - 1)) / rr;
             resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), False);
             if(r)
                 resizeclient(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw));
-            my += HEIGHT(c);
+            my += HEIGHT(c) + gappx;
         }
         else {
-            h = (m->wh - ty) / (n - i);
-            resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), False);
+            rr = n - i;
+            h = (m->wh - ty - gappx * (rr - 1)) / rr;
+            resize(c, m->wx + mw + g, m->wy + ty, m->ww - mw - g - (2*c->bw), h - (2*c->bw), False);
             if(r)
-                resizeclient(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw));
-            ty += HEIGHT(c);
+                resizeclient(c, m->wx + mw + g, m->wy + ty, m->ww - mw - g - (2*c->bw), h - (2*c->bw));
+            ty += HEIGHT(c) + gappx;
         }
     }
 }
