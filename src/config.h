@@ -22,7 +22,7 @@ static const char colors[NUMCOLORS][ColLast][9] = {
   { "#282a2e", "#8abeb7", "#282a2e" }, // D = cyan on darkgrey
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gap pixel between windows */
+static const unsigned int gappx     = 0;        /* gap pixel between windows */
 static const unsigned int snap      = 8;        /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
