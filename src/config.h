@@ -35,15 +35,12 @@ static const Rule rules[] = {
     /* class                        instance    title           tagmask     isfloating  monitor */
     { "feh",                        NULL,       NULL,           0,          True,       0 },
     { "Firefox",                    NULL,       NULL,           1,          False,      0 },
-    { "MPlayer",                    NULL,       NULL,           4,          True,       0 },
-    { "mplayer2",                   NULL,       NULL,           4,          True,       0 },
     { "mpv",                        NULL,       NULL,           4,          True,       0 },
     { "Spotify",                    NULL,       NULL,           4,          False,      0 },
     { "Pcmanfm",                    NULL,       NULL,           8,          False,      0 },
     { "VirtualBox",                 NULL,       NULL,           8,          True,       0 },
     { "Java",                       "java",     "Eclipse",      16,         True,       0 },
     { "Eclipse",                    NULL,       NULL,           16,         False,      0 },
-    { "Qtcreator",                  NULL,       NULL,           16,         False,      0 },
     { NULL,                         NULL,       "LibreOffice",  32,         False,      0 },
     { "libreoffice-calc",           NULL,       NULL,           32,         False,      0 },
     { "libreoffice-impress",        NULL,       NULL,           32,         False,      0 },
@@ -82,7 +79,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char *[ ]) { "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[ ]      = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[1][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
+static const char *dmenucmd[ ]      = { "dmenu_run", "-fn", "Terminus-9", "-nb", colors[0][ColBG], "-nf", colors[1][ColFG], "-sb", colors[2][ColBG], "-sf", colors[2][ColFG], NULL };
 static const char *termcmd[ ]       = { "urxvtc", NULL };
 static const char scratchpadname[ ] = "scratchpad";
 static const char *scratchpadcmd[ ] = { "urxvtc", "-name", scratchpadname, "-geometry", "100x25", NULL };
@@ -90,7 +87,6 @@ static const char *navgcmd[ ]       = { "firefox", NULL };
 static const char *filecmd[ ]       = { "pcmanfm", NULL };
 static const char *mailcmd[ ]       = { "urxvtc", "-e", "mutt", NULL };
 static const char *shotcmd[ ]       = { "scrot", "-mq10", NULL };
-static const char *wshtcmd[ ]       = { "scrot", "-sq10", NULL };
 static const char *lockcmd[ ]       = { "slock", NULL };
 
 #include "push.c"
@@ -104,7 +100,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_l,               spawn,              {.v = lockcmd       } },
     { MODKEY,               XK_d,               spawn,              {.v = filecmd       } },
     { 0,                    0xff61,             spawn,              {.v = shotcmd       } },
-    { MODKEY,               0xff61,             spawn,              {.v = wshtcmd       } },
     { MODKEY,               XK_m,               togglebar,          {0} },
     { MODKEY,               XK_j,               focusstack,         {.i = +1 } },
     { MODKEY,               XK_k,               focusstack,         {.i = -1 } },
