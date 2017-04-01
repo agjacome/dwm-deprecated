@@ -35,6 +35,7 @@ static const Rule rules[] = {
     /* class                        instance    title           tagmask     isfloating  monitor */
     { "feh",                        NULL,       NULL,           0,          True,       0 },
     { "Firefox",                    NULL,       NULL,           1,          False,      0 },
+    { "Pale moon",                  NULL,       NULL,           1,          False,      0 },
     { "mpv",                        NULL,       NULL,           4,          True,       0 },
     { "Spotify",                    NULL,       NULL,           4,          False,      0 },
     { "Pcmanfm",                    NULL,       NULL,           8,          False,      0 },
@@ -83,7 +84,7 @@ static const char *dmenucmd[ ]      = { "dmenu_run", "-fn", "Terminus-9", "-nb",
 static const char *termcmd[ ]       = { "urxvtc", NULL };
 static const char scratchpadname[ ] = "scratchpad";
 static const char *scratchpadcmd[ ] = { "urxvtc", "-name", scratchpadname, "-geometry", "100x25", NULL };
-static const char *navgcmd[ ]       = { "firefox", NULL };
+static const char *navgcmd[ ]       = { "palemoon", NULL };
 static const char *filecmd[ ]       = { "pcmanfm", NULL };
 static const char *mailcmd[ ]       = { "urxvtc", "-e", "mutt", NULL };
 static const char *shotcmd[ ]       = { "scrot", "-mq10", NULL };
