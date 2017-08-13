@@ -1,8 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
+#define NUMCOLORS 4
+
 /* appearance */
 static const char *fonts[] = {
 	"monospace:size=10"
+};
+
+static const char colors[NUMCOLORS][MAXCOLORS][8] = {
+    //border foregraoud background
+    { "#000033", "#dddddd", "#000033" }, // normal
+    { "#000088", "#ffffff", "#000088" }, // selected
+    { "#ff0000", "#000000", "#ffff00" }, // urgent/warning
+    { "#ff0000", "#ffffff", "#ff0000" }  // error
 };
 
 static const char dmenufont[]       = "monospace:size=10";
