@@ -52,7 +52,7 @@
 #define ISVISIBLEONTAG(C, T)    ((C->tags & T))
 #define ISVISIBLE(C)            ISVISIBLEONTAG(C, C->mon->tagset[C->mon->seltags])
 #define LENGTH(X)               (sizeof X / sizeof X[0])
-#define MAXCOLORS               9
+#define MAXCOLORS               32
 #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
@@ -1621,7 +1621,7 @@ setup(void)
 	drw_load_fonts(drw, fonts, LENGTH(fonts));
 	if (!drw->fontcount)
 		die("no fonts could be loaded.\n");
-	bh = drw->fonts[0]->h;
+	bh = drw->fonts[0]->h + 2;
 	updategeom();
 	/* init atoms */
 	wmatom[WMProtocols] = XInternAtom(dpy, "WM_PROTOCOLS", False);
