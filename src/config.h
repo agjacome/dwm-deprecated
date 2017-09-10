@@ -2,10 +2,10 @@
 
 static const char *fonts[] = {
     "Misc xbmicons:size=8", // "-*-xbmicons-medium-r-*-*-12-*-*-*-*-*-*-*",
-    "Terminus:size=8",      // "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
+    "xos4 Terminus:size=8"// "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
 };
 
-static const char colors[NUMCOLORS][MAXCOLORS][9] = {
+static const char colors[NUMCOLORS][MAXCOLORS][8] = {
     /* border, foreground, background */
     { "#282a2e", "#5b626c", "#1d1f21" }, // 1 = normal (grey on black)
     { "#f0c674", "#c5c8c6", "#1d1f21" }, // 2 = selected (white on black)
@@ -59,11 +59,11 @@ static const int   resizehints = 0;    /* 1 means respect size hints in tiled re
 #include "gaplessgrid.c"
 static const Layout layouts[] = {
     /* symbol, arrange function */
-    { "\uE019  \uE009  \uE019", tile        }, /* first entry is default */
-    { "\uE019  \uE00C  \uE019", bstack      },
-    { "\uE019  \uE00D  \uE019", gaplessgrid },
-    { "\uE019  \uE00B  \uE019", monocle     },
-    { "\uE019  \uE00A  \uE019", NULL        }, /* no layout function means floating behavior */
+    { "\uE019 \uE009 \uE019", tile        }, /* first entry is default */
+    { "\uE019 \uE00C \uE019", bstack      },
+    { "\uE019 \uE00D \uE019", gaplessgrid },
+    { "\uE019 \uE00B \uE019", monocle     },
+    { "\uE019 \uE00A \uE019", NULL        }, /* no layout function means floating behavior */
 };
 
 #define MODKEY Mod4Mask
@@ -76,7 +76,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char *[ ]) { "/bin/sh", "-c", cmd, NULL } }
 
 static char        dmenumon[2] = "0"; // component of dmenucmd, manipulated in spawn()
-static const char *dmenucmd[ ] = { "dmenu_run", "-m", dmenumon, "-fn", "Terminus-9", "-nb", colors[0][2], "-nf", colors[1][1], "-sb", colors[2][2], "-sf", colors[2][1], NULL };
+static const char *dmenucmd[ ] = { "dmenu_run", "-m", dmenumon, "-fn", "xos4 Terminus-8", "-nb", colors[0][2], "-nf", colors[1][1], "-sb", colors[2][2], "-sf", colors[2][1], NULL };
 
 static const char *termcmd[ ] = { "urxvtc", NULL };
 static const char *navgcmd[ ] = { "palemoon", NULL };
