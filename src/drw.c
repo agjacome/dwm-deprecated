@@ -237,7 +237,7 @@ drw_get_width(Drw *drw, int numcolors, const char *text)
 			/* we are somewhere in the middle of the string and the color has changed
 			 * we want to add one character's height (divided by 2) as padding to the end of the previous colored text
 			 * and to the beginning of the new colored text */
-			w += curfont->h;
+			w += (curfont->h / 2);
 		}
 	}
 
@@ -260,7 +260,7 @@ drw_colored_text(Drw *drw, ClrScheme *scheme, int numcolors, int x, int y, unsig
 		c = *ptr;
 		*ptr = 0;
 		if (i)
-			x = drw_text(drw, x, y, w, h, buf, 0) + drw->fonts[0]->h;
+			x = drw_text(drw, x, y, w, h, buf, 0) + (drw->fonts[0]->h / 2);
 		*ptr = c;
 		drw_setscheme(drw, &scheme[c-1]);
 		buf = ++ptr;

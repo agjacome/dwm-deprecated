@@ -2,7 +2,7 @@
 
 static const char *fonts[] = {
     "Misc xbmicons:size=8", // "-*-xbmicons-medium-r-*-*-12-*-*-*-*-*-*-*",
-    "xos4 Terminus:size=8"// "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
+    "xos4 Terminus:size=8", // "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
 };
 
 static const char colors[NUMCOLORS][MAXCOLORS][8] = {
